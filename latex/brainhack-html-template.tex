@@ -189,23 +189,22 @@ $if(graphics)$
 % Images get their normal width if they fit onto the page, but
 % are scaled down if they would overflow the margins.
 \makeatletter
-\def\ScaleWidthIfNeeded{%
- \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\def\ScaleHeightIfNeeded{%
-  \ifdim\Gin@nat@height>0.9\textheight
-    0.9\textheight
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\setkeys{Gin}{width=\ScaleWidthIfNeeded,height=\ScaleHeightIfNeeded,keepaspectratio}%
+    \Configure{graphics}
+     {\bgroup
+         \Configure{IMG}
+            {\HCode{<img src="}}
+            {\HCode{" alt="}}
+            {" }
+            {\HCode{" }}
+            {}%
+      \Picture+[PIC]{}}
+     {\EndPicture
+       \HCode{ width="\expandafter\the\csname Gin@req@width\endcsname"
+       height="\expandafter\the\csname Gin@req@height\endcsname"
+        />}%
+      \egroup}
+ \makeatother
+ 
 $endif$
 
 \end{backmatter}

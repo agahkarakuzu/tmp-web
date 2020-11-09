@@ -182,5 +182,30 @@ $if(bibliography)$
 \bibliography{../$bibliography$} % Bibliography file (usually '*.bib' )
 $endif$
 
+$if(graphics)$
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width or the height of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+    \Configure{graphics}
+     {\bgroup
+         \Configure{IMG}
+            {\HCode{<img src="}}
+            {\HCode{" alt="}}
+            {" }
+            {\HCode{" }}
+            {}%
+      \Picture+[PIC]{}}
+     {\EndPicture
+       \HCode{ width="\expandafter\the\csname Gin@req@width\endcsname"
+       height="\expandafter\the\csname Gin@req@height\endcsname"
+        />}%
+      \egroup}
+ \makeatother
+ 
+$endif$
+
 \end{backmatter}
 \end{document}

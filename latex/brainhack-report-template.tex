@@ -235,7 +235,7 @@ $if(reviewers)$
 \begin{itemize}
 \setlength\itemsep{0em}
 $for(reviewers)$
-\item \href{https://github.com/$reviewers.gh_handle$}{@$reviewers.gh_handle$} $reviewers.name$ $reviewers.surname$
+\item $reviewers.name$ $reviewers.surname$ \href{https://github.com/$reviewers.gh_handle$}{@$reviewers.gh_handle$}
 $endfor$
 \end{itemize}
 $else$

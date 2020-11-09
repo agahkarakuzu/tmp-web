@@ -122,17 +122,6 @@ $endif$
 $endif$
 $endfor$
 
-$for(reviewer)$
-$if(reviewer.name)$
-$if(reviewer.surname)$
-$if(reviewer.github_handle)$
-\reviewer[
-$if(reviewer.github_handle)$ghandle={$reviewer.github_handle$},$else$\emph{No Reviewer}$endif$  
-]{\rghandle{\url{https://github.com/$reviewer.github_handle$}} \rnm{$reviewer.name$} \rsnm{$reviewer.surname$}}
-$endif$
-$endif$
-$endif$
-$endfor$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -266,3 +255,21 @@ $endif$
 
 \end{backmatter}
 \end{document}
+
+$if(reviewers)$
+{\bfseries Reviewers:}
+\begin{itemize}
+\setlength\itemsep{0em}
+$for(reviewers)$
+\item \href{https://github.com/$reviewers$}{@$reviewers$}
+$endfor$
+\end{itemize}
+$endif$$if(reviewers)$
+{\bfseries Reviewers:}
+\begin{itemize}
+\setlength\itemsep{0em}
+$for(reviewers)$
+\item \href{https://github.com/$reviewers$}{@$reviewers$}
+$endfor$
+\end{itemize}
+$endif$

@@ -845,7 +845,7 @@
 \setattribute{address}          {text} {Author details}
 \setattribute{corref}           {text} {Correspondence: }
 \setattribute{authorinfo}       {text} {Full list of author information is available at the end of the article\endgraf}
-\setattribute{reviewerhandle    {text} {Reviewer details} 
+\setattribute{reviewerhandle}    {text} {Reviewer details} 
 \setattribute{presentaddress}   {text} {\textit{Present address: }}
 \setattribute{copyright}        {text} {\@runauthor\ \textit{\journal@name}}
 \setattribute{runninghead}      {text} {\@runauthor\ \textit{\journal@name} \hfill \thepage@fmt{\thepage}}

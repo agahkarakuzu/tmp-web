@@ -232,21 +232,14 @@ $if(acknow)$$acknow$$else$\emph{Acknowedgements section is missing.}$endif$
 
 \section*{Reviewers}
 $if(reviewers)$
-{\bfseries Reviewers:}
 \begin{itemize}
 \setlength\itemsep{0em}
 $for(reviewers)$
-\item \href{https://github.com/$reviewers$}{@$reviewers$}
+\item \href{https://github.com/$reviewers.gh_handle$}{@$reviewers.gh_handle$} $reviewers.name$ $reviewers.surname$
 $endfor$
 \end{itemize}
-$endif$$if(reviewers)$
-{\bfseries Reviewers:}
-\begin{itemize}
-\setlength\itemsep{0em}
-$for(reviewers)$
-\item \href{https://github.com/$reviewers$}{@$reviewers$}
-$endfor$
-\end{itemize}
+$else$
+\emph{No reviewers has been added yet.}
 $endif$
 
   

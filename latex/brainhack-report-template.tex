@@ -230,6 +230,25 @@ $if(contrib)$$contrib$$else$\emph{Author's contributions statement is missing.}$
 \section*{Acknowledgements}
 $if(acknow)$$acknow$$else$\emph{Acknowedgements section is missing.}$endif$
 
+\section*{Reviewers}
+$if(reviewers)$
+{\bfseries Reviewers:}
+\begin{itemize}
+\setlength\itemsep{0em}
+$for(reviewers)$
+\item \href{https://github.com/$reviewers$}{@$reviewers$}
+$endfor$
+\end{itemize}
+$endif$$if(reviewers)$
+{\bfseries Reviewers:}
+\begin{itemize}
+\setlength\itemsep{0em}
+$for(reviewers)$
+\item \href{https://github.com/$reviewers$}{@$reviewers$}
+$endfor$
+\end{itemize}
+$endif$
+
   
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -255,21 +274,3 @@ $endif$
 
 \end{backmatter}
 \end{document}
-
-$if(reviewers)$
-{\bfseries Reviewers:}
-\begin{itemize}
-\setlength\itemsep{0em}
-$for(reviewers)$
-\item \href{https://github.com/$reviewers$}{@$reviewers$}
-$endfor$
-\end{itemize}
-$endif$$if(reviewers)$
-{\bfseries Reviewers:}
-\begin{itemize}
-\setlength\itemsep{0em}
-$for(reviewers)$
-\item \href{https://github.com/$reviewers$}{@$reviewers$}
-$endfor$
-\end{itemize}
-$endif$

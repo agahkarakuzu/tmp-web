@@ -122,6 +122,18 @@ $endif$
 $endif$
 $endfor$
 
+$for(reviewer)$
+$if(reviewer.name)$
+$if(reviewer.surname)$
+$if(reviewer.github_handle)$
+\reviewer[
+$if(reviewer.github_handle)$ghandle={$reviewer.github_handle$},$else$\emph{No Reviewer}$endif$  
+]{\rghandle{\url{https://github.com/$reviewer.github_handle$}} \rnm{$reviewer.name$} \rsnm{$reviewer.surname$}}
+$endif$
+$endif$
+$endif$
+$endfor$
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Enter the authors' addresses here        %%

@@ -1,4 +1,5 @@
-{{ $pageurl := (print "https://brainhack-proceedings.github.io/" $.Site.Data.ghdetails.pub_name) }}
+
+{{ $pageurl := (print "https://" {{ replace $.Site.Data.ghdetails.repo $.Site.Data.ghdetails.pub_name "" }} ".github.io/" $.Site.Data.ghdetails.pub_name) }}
 
 <style>
 #share-buttons {display: inline-block; vertical-align: middle; }

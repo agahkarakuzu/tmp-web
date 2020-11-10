@@ -219,6 +219,16 @@ $body$
 \begin{backmatter}
 
 \section*{Availability of Supporting Data}
+$if(supplemental)$
+\begin{itemize}
+\setlength\itemsep{0em}
+$for(supplemental)$
+\item \href{$supplemental.url$}{$supplemental.name$}
+$endfor$
+\end{itemize}
+$else$
+\emph{Supplemental material has not been provided.}
+$endif$
 More information about this project can be found at: $if(url)$\url{$url$}.$else$\emph{URL is missing}$endif$ $if(gigascience-ref)$Further data and files supporting this project are hosted in the \emph{GigaScience} repository $gigascience-ref$.$endif$
 
 \section*{Competing interests}

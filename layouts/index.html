@@ -111,13 +111,17 @@
           <ul class="tags">
             {{ range $ky, $lbl := .Site.Data.report.report.tags}}
             <li class="tag">{{$lbl}}</li> 
+            {{else}}
+            <li>No tags.</li>
           {{end}}
           </ul>
 
           <h3 style="margin-top: 1em;">Supplemental Materials</h3>
           <ul>
             {{ range $ky, $lbl := .Site.Data.report.report.supplemental}}
-            <li> {{$lbl}} </li> 
+            <li> <a href="{{$lbl.url}}">{{$lbl.name}}</a> </li>
+            {{else}}
+            <li> No supplementary material. </li>
           {{end}}
           </ul>
           

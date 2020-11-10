@@ -1,5 +1,7 @@
+{{ $rmname := (print "/" $.Site.Data.ghdetails.pub_name) }}
+{{ $orgname := replace $.Site.Data.ghdetails.repo $rmname "" }}
 
-{{ $pageurl := (print "https://" {{ replace $.Site.Data.ghdetails.repo $.Site.Data.ghdetails.pub_name "" }} ".github.io/" $.Site.Data.ghdetails.pub_name) }}
+{{ $pageurl := (print "https://" $orgname ".github.io/" $.Site.Data.ghdetails.pub_name) }}
 
 <style>
 #share-buttons {display: inline-block; vertical-align: middle; }

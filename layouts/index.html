@@ -101,10 +101,7 @@
           {{ $myUrl := print "https://github.com/" $.Site.Data.ghdetails.repo}}
           {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "GitHub" "message" "Project Repository" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}}     
           {{ if $.Site.Data.report.report.binder}}
-          u, err := url.Parse($.Site.Data.report.report.url)
-          if err != nil {
-              log.Fatal(err)
-          }
+          {{ $u:= urls.Parse $.Site.Data.report.report.url }}
           {{ partial "badge_binder" (dict "name" $u.Path) }}
           {{end}}
           <br> 

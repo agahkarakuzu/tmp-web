@@ -16,7 +16,7 @@
         overflow-y: scroll;
       }
   img {
-        max-width: 70%;
+        max-width: 95%;
         height: auto;
     }
     ::-webkit-scrollbar {
@@ -119,7 +119,7 @@
           <h3 style="margin-top: 1em;">Supplemental Materials</h3>
           <ul>
             {{ range $ky, $lbl := .Site.Data.report.report.supplemental}}
-            <li> <a href="{{$lbl.url}}">{{$lbl.name}}</a> </li>
+            <li> <a href="{{$lbl.url}}" target="_blank">{{$lbl.name}}</a> </li>
             {{else}}
             <li> No supplementary material. </li>
           {{end}}
@@ -137,7 +137,7 @@
           <h3 style="margin-top: 1em;">Reviewers</h3>
           <ul>
           {{ range $ky, $lbl := .Site.Data.report.report.reviewers}}
-            <li> <a href="https://github.com/{{$lbl.gh_handle}}">@{{$lbl.gh_handle}}</a> </li> 
+            <li> <a href="https://github.com/{{$lbl.gh_handle}}" target="_blank">@{{$lbl.gh_handle}}</a> </li> 
           {{else}}
             <li> No reviewers </li>
           {{end}}

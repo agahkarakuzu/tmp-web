@@ -99,7 +99,7 @@
            <br>
 
           {{ $myUrl := print "https://github.com/" $.Site.Data.ghdetails.repo}}
-          {{ partial "badge" (dict "name" "{{$.Site.Data.ghdetails.repo}}") }} {{ partial "badge_custom" (dict "label" "GitHub" "message" "Project Repository" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}}     
+          {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "GitHub" "message" "Project Repository" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}}     
           <br> 
            <!-- TODO: Make template dynamic-->
            <a href="https://github.com/{{$.Site.Data.ghdetails.repo}}/raw/gh-pages/pdf/brainhack-{{$.Site.Data.ghdetails.pub_name}}.pdf" download="brainhack-{{$.Site.Data.ghdetails.pub_name}}.pdf">

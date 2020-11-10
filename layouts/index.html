@@ -130,6 +130,15 @@
           <h3 style="margin-top: 1em;">Acknowledgements</h3>
           <p> {{.Site.Data.report.report.acknow}}</p>
 
+          <h3 style="margin-top: 1em;">Reviewers</h3>
+          <ul>
+          {{ range $ky, $lbl := .Site.Data.report.report.reviewers}}
+            <li> <a href="https://github.com/{{$lbl.gh_handle}}">@{{$lbl.gh_handle}}</a> </li> 
+          {{else}}
+            <li> No reviewers </li>
+          {{end}}
+          </ul>
+
           <h3 style="margin-top: 1em;">Event</h3>
           <p> {{.Site.Data.report.report.event}}</p>
 

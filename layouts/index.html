@@ -101,9 +101,9 @@
           {{ $myUrl := print $.Site.Data.report.report.url }}
           {{ if $.Site.Data.report.report.binder}} 
           {{ $u:= urls.Parse $.Site.Data.report.report.url }}
-          {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "Project" "message" "Repository" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}} {{ partial "badge_binder" (dict "name" $u.Path) }}
+          {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "Project" "message" "Repo" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}} {{ partial "badge_binder" (dict "name" $u.Path) }}
           {{else}}
-          {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "Project" "message" "Repository" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}}
+          {{ partial "badge" (dict "name" $.Site.Data.ghdetails.repo) }} {{ partial "badge_custom" (dict "label" "Project" "message" "Repo" "link" $myUrl "target" "_blank" "logo" "github" "logoWidth" "14" "color" "green")}}
           {{end}}
           <br> 
            <!-- TODO: Make template dynamic-->
